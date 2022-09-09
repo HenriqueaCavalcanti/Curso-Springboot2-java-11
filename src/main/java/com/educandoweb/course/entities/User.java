@@ -1,27 +1,40 @@
 package com.educandoweb.course.entities;
 
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Objects;
 
+@Entity
+@Table(name="User_registration")
 public class User implements Serializable {
 
     private static final long serialVersionUID = 1l;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name="name")
     private String name;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "phone")
     private String phone;
-    private String pessword;
+    
+    @Column(name = "password")
+    private String password;
 
     public User() {
     }
 
-    public User(Long id, String name, String email, String phone, String pessword) {
+    public User(Long id, String name, String email, String phone, String password) {
         this.id = id;
         this.name = name;
         this.email = email;
         this.phone = phone;
-        this.pessword = pessword;
+        this.password = password;
     }
 
     public Long getId() {
@@ -56,12 +69,12 @@ public class User implements Serializable {
         this.phone = phone;
     }
 
-    public String getPessword() {
-        return pessword;
+    public String getPassword() {
+        return password;
     }
 
-    public void setPessword(String pessword) {
-        this.pessword = pessword;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     @Override
