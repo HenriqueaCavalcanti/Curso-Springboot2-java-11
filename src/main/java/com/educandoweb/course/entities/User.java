@@ -22,7 +22,7 @@ public class User implements Serializable {
 
     @Column(name = "phone")
     private String phone;
-    
+
     @Column(name = "password")
     private String password;
 
@@ -90,3 +90,5 @@ public class User implements Serializable {
         return Objects.hash(id);
     }
 }
+
+
