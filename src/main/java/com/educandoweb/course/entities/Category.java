@@ -13,6 +13,7 @@ import java.util.Set;
 @Table(name = "Category_Registration")
 public class Category implements Serializable {
 
+    private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
