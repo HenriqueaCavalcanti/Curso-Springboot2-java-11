@@ -16,17 +16,21 @@ public class UserService {
     private UserRepository repository;
 
 
-    public List<User> findAll(){
+    public List<User> findAll() {
         return repository.findAll();
     }
 
-//    @GetMapping(value = "/{id}")
-    public User findById(Long id){
+
+    public User findById(Long id) {
         Optional<User> obj = repository.findById(id);
         return obj.get();
     }
 
-    public User insert(User obj){
+    public User insert(User obj) {
         return repository.save(obj);
+    }
+
+    public void delete(Long id){
+       repository.deleteById(id);
     }
 }
